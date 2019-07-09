@@ -4,9 +4,6 @@
 #include <inttypes.h>
 #include <string.h>
 
-// gcc bytesort.c -o bytesort -Wall -Ofast -funroll-loops
-// time $(cat pswd_list.txt | ./bytesort &> /dev/null)
-
 #define NORMAL 0
 #define COMPACT 1
 #define HEX 2
@@ -27,7 +24,7 @@ inline void help()
 		"                   ASCII characters [0x21; 0x7E].\n"
 		"  -n, --newline    Adds a newline to the end of the output.\n\n"
 
-		"WARNING: This program may exit with an error when attemting\n"
+		"WARNING: This program may exit with an error when attempting\n"
 		"         to sort more than 18447 Petabytes of data.\n"
 	);
 

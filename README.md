@@ -5,6 +5,31 @@ Bytesort is a scalable and heavily performance optimized sorting program. It use
 
 This program exists purely as a proof of concept. It is meant more as a demonstration of a linear time sorting algorithm than a genuine tool for applications, where sorting large quantities of 8-bit numbers would be necessary, as I don't expect there to be that many.
 
+## The Algorithm
+
+This program is an implementation of the sorting algorithm, formally known **histogram sort**. The basic idea is that, if you generate the histogram from an array of integers and throw away the original array, the only piece of information you're losing about the numbers in the original array is their order.
+
+### Step-by-Step Example
+
+1. Start with a string of letters:
+```
+cdbacdda
+```
+
+2. Count how often each letter appears:
+```
+a:2 b:1 c:2 d:3
+```
+
+3. Make a new string using the information collected above:
+```
+aabccddd
+```
+
+### Runtime Complexity
+
+Both the generation of the histogram and the generation of the final string scale linearly to the length of the original string. As both processes run in sequence, the runtime of the entire sorting algorithm is proportional to n + n = 2n, which means histogram sort takes O(n) time.
+
 ## Usage
 ```
 Usage: cat [FILE] | ./bytesort [OPTION]...
